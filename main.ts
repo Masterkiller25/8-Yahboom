@@ -1,11 +1,13 @@
 radio.onReceivedValue(function (name, value) {
     if ("droite" == name) {
-        SuperBit.MotorRun(SuperBit.enMotors.M1, value / 4)
+        x = value / 4
     }
     if ("guache" == name) {
-        SuperBit.MotorRun(SuperBit.enMotors.M1, value / 4)
+        y = value / 4
     }
 })
+let y = 0
+let x = 0
 basic.showLeds(`
     . . # . .
     . # # # .
@@ -14,3 +16,11 @@ basic.showLeds(`
     . # . # .
     `)
 radio.setGroup(5)
+basic.forever(function () {
+    SuperBit.MotorRunDual(
+    SuperBit.enMotors.M1,
+    x + y,
+    SuperBit.enMotors.M3,
+    x - y
+    )
+})
