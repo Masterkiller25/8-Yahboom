@@ -1,8 +1,8 @@
 radio.onReceivedValue(function (name, value) {
-    if ("droite" == name) {
+    if ("x" == name) {
         x = value / 4
     }
-    if ("guache" == name) {
+    if ("y" == name) {
         y = value / 4
     }
 })
