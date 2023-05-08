@@ -9,23 +9,12 @@ radio.onReceivedNumber(function (receivedNumber) {
 radio.onReceivedString(function (receivedString) {
     if ("ok" == receivedString) {
         basic.showLeds(`
-            # # # . .
-            . . . # .
-            # # . . #
-            . . # . #
             # . # . #
+            # . # . .
+            # . . # #
+            . # . . .
+            . . # # #
             `)
-    }
-    if ("no" == receivedString) {
-        basic.showLeds(`
-            . . # . .
-            . # # # .
-            # # # # #
-            . # . # .
-            . # . # .
-            `)
-        y = 0
-        x = 0
     }
 })
 radio.onReceivedValue(function (name, value) {
@@ -36,8 +25,8 @@ radio.onReceivedValue(function (name, value) {
         y = value / 4
     }
 })
-let x = 0
 let y = 0
+let x = 0
 basic.showLeds(`
     . . # . .
     . # # # .
